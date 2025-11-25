@@ -1,0 +1,9 @@
+# data
+/data_PhoNER/
+/data_VSFC/
+
+# orthers
+assignments.ipynb
+
+#pycache
+/__pycache__/
