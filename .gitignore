@@ -7,4 +7,4 @@ assignments.ipynb
 
 #pycache
 /__pycache__/
-*/__pycache__/
+build_dataset/__pycache__/
