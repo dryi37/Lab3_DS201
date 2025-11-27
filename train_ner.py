@@ -53,7 +53,7 @@ def train_epoch(model, loader, optimizer, criterion, device, vocab):
             all_golds.append([vocab.id2tag[i] for i in g])
 
     avg_loss = sum(losses) / len(losses)
-    f1 = f1_score(all_golds, all_preds)
+    f1 = f1_score(all_golds, all_preds, average="macro")
 
     return avg_loss, f1
 
@@ -90,7 +90,7 @@ def eval_epoch(model, loader, criterion, device, vocab):
                 all_golds.append([vocab.id2tag[i] for i in g])
 
     avg_loss = sum(losses) / len(losses)
-    f1 = f1_score(all_golds, all_preds)
+    f1 = f1_score(all_golds, all_preds, average="macro")
     return avg_loss, f1
 
 

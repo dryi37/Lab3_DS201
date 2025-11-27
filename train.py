@@ -67,7 +67,7 @@ def train_epoch(model, loader, optimizer, criterion, device):
         all_labels.extend(labels.cpu().numpy())
 
     avg_loss = sum(losses) / len(losses)
-    f1 = f1_score(all_labels, all_preds, average="weighted")
+    f1 = f1_score(all_labels, all_preds, average="macro")
 
     return avg_loss, f1
 
@@ -92,7 +92,7 @@ def eval_epoch(model, loader, criterion, device):
             all_labels.extend(labels.cpu().numpy())
 
     avg_loss = sum(losses) / len(losses)
-    f1 = f1_score(all_labels, all_preds, average="weighted")
+    f1 = f1_score(all_labels, all_preds, average="macro")
 
     return avg_loss, f1
 
